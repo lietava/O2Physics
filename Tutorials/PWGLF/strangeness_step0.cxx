@@ -32,7 +32,10 @@ struct strangeness_tutorial {
   // histogram defined with HistogramRegistry
   HistogramRegistry registry{"registry",
                              {{"hVertexZ", "hVertexZ", {HistType::kTH1F, {{nBins, -15., 15.}}}},
-                              {"hMassK0Short", "hMassK0Short", {HistType::kTH1F, {{200, 0.45f, 0.55f}}}}}};
+                              {"hMassK0Short", "hMassK0Short", {HistType::kTH1F, {{200, 0.45f, 0.55f}}}},
+                              {"hMassLambda", "hMassLambda", {HistType::kTH1F, {{200, 1.064f, 1.164f}}}}
+			     }
+			    };
 
   // Defining filters for events (event selection)
   // Processed events will be already fulfulling the event selection requirements
@@ -46,6 +49,7 @@ struct strangeness_tutorial {
 
     for (auto& v0 : V0s) {
       registry.fill(HIST("hMassK0Short"), v0.mK0Short());
+      registry.fill(HIST("hMassLambda"), v0.mLambda());
     }
   }
 };
