@@ -20,6 +20,7 @@ o2_add_executable(
                   SOURCES src/ctp-qc-proxy.cxx
                   PUBLIC_LINK_LIBRARIES O2::DCStestWorkflow
                   O2::DataFormatsCTP)
+                  bookkeeping-api::BookkeepingApi)
 o2_add_executable(
                   ccdb-orbit
                   COMPONENT_NAME ctp
