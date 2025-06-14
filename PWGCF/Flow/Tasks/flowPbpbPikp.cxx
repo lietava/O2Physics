@@ -13,48 +13,46 @@
 /// \brief PID flow using the generic framework
 /// \author Preet Bhanjan Pati <preet.bhanjan.pati@cern.ch>
 
-#include <CCDB/BasicCCDBManager.h>
-#include <cmath>
-#include <vector>
-#include <utility>
-#include <array>
-#include <string>
-#include <map>
-
-#include "Math/Vector4D.h"
-
-#include "Framework/runDataProcessing.h"
-#include "Framework/AnalysisTask.h"
-#include "Framework/ASoAHelpers.h"
-#include "Framework/RunningWorkflowInfo.h"
-#include "Framework/HistogramRegistry.h"
-#include "Framework/AnalysisDataModel.h"
-#include "Framework/StepTHn.h"
-
-#include "Common/DataModel/EventSelection.h"
-#include "Common/Core/TrackSelection.h"
-#include "Common/DataModel/TrackSelectionTables.h"
-#include "Common/DataModel/Centrality.h"
-#include "Common/DataModel/PIDResponse.h"
-#include "Common/DataModel/PIDResponseITS.h"
-#include "Common/Core/trackUtilities.h"
-#include "Common/DataModel/Multiplicity.h"
-#include "CommonConstants/PhysicsConstants.h"
-
-#include "PWGCF/GenericFramework/Core/GFWPowerArray.h"
-#include "PWGCF/GenericFramework/Core/GFW.h"
-#include "PWGCF/GenericFramework/Core/GFWCumulant.h"
 #include "PWGCF/GenericFramework/Core/FlowContainer.h"
+#include "PWGCF/GenericFramework/Core/GFW.h"
+#include "PWGCF/GenericFramework/Core/GFWConfig.h"
+#include "PWGCF/GenericFramework/Core/GFWCumulant.h"
+#include "PWGCF/GenericFramework/Core/GFWPowerArray.h"
 #include "PWGCF/GenericFramework/Core/GFWWeights.h"
 #include "PWGCF/GenericFramework/Core/GFWWeightsList.h"
-#include "PWGCF/GenericFramework/Core/GFWConfig.h"
 
-#include "ReconstructionDataFormats/Track.h"
+#include "Common/Core/TrackSelection.h"
+#include "Common/Core/trackUtilities.h"
+#include "Common/DataModel/Centrality.h"
+#include "Common/DataModel/EventSelection.h"
+#include "Common/DataModel/Multiplicity.h"
+#include "Common/DataModel/PIDResponse.h"
+#include "Common/DataModel/PIDResponseITS.h"
+#include "Common/DataModel/TrackSelectionTables.h"
+
+#include "CommonConstants/PhysicsConstants.h"
+#include "Framework/ASoAHelpers.h"
+#include "Framework/AnalysisDataModel.h"
+#include "Framework/AnalysisTask.h"
+#include "Framework/HistogramRegistry.h"
+#include "Framework/RunningWorkflowInfo.h"
+#include "Framework/StepTHn.h"
+#include "Framework/runDataProcessing.h"
 #include "ReconstructionDataFormats/PID.h"
+#include "ReconstructionDataFormats/Track.h"
+#include <CCDB/BasicCCDBManager.h>
 
+#include "Math/Vector4D.h"
+#include <TF1.h>
 #include <TProfile.h>
 #include <TRandom3.h>
-#include <TF1.h>
+
+#include <array>
+#include <cmath>
+#include <map>
+#include <string>
+#include <utility>
+#include <vector>
 
 using namespace o2;
 using namespace o2::framework;

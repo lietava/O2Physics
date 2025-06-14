@@ -16,40 +16,41 @@
 /// \author Carolina Reetz <c.reetz@cern.ch>
 // ========================
 
-#include <cmath>
-#include <array>
-#include <cstdlib>
-#include <string>
-#include <vector>
-#include <unordered_map>
-#include <algorithm>
-#include <memory>
+#include "TableHelper.h"
 
-#include "Framework/runDataProcessing.h"
-#include "Framework/AnalysisTask.h"
-#include "Framework/AnalysisDataModel.h"
-#include "Framework/ASoAHelpers.h"
-#include "ReconstructionDataFormats/Track.h"
-#include "Common/Core/RecoDecay.h"
-#include "Common/Core/trackUtilities.h"
 #include "PWGLF/DataModel/Reduced3BodyTables.h"
 #include "PWGLF/DataModel/Vtx3BodyTables.h"
 #include "PWGLF/DataModel/pidTOFGeneric.h"
 #include "PWGLF/Utils/decay3bodyBuilderHelper.h"
+
+#include "Common/Core/PID/PIDTOF.h"
+#include "Common/Core/RecoDecay.h"
+#include "Common/Core/trackUtilities.h"
 #include "Common/DataModel/EventSelection.h"
 #include "Common/DataModel/PIDResponse.h"
-#include "Common/Core/PID/PIDTOF.h"
-#include "TableHelper.h"
-#include "Tools/KFparticle/KFUtilities.h"
-
 #include "EventFiltering/Zorro.h"
 #include "EventFiltering/ZorroSummary.h"
+#include "Tools/KFparticle/KFUtilities.h"
 
-#include "DetectorsBase/Propagator.h"
-#include "DetectorsBase/GeometryManager.h"
-#include "DataFormatsParameters/GRPObject.h"
-#include "DataFormatsParameters/GRPMagField.h"
 #include "CCDB/BasicCCDBManager.h"
+#include "DataFormatsParameters/GRPMagField.h"
+#include "DataFormatsParameters/GRPObject.h"
+#include "DetectorsBase/GeometryManager.h"
+#include "DetectorsBase/Propagator.h"
+#include "Framework/ASoAHelpers.h"
+#include "Framework/AnalysisDataModel.h"
+#include "Framework/AnalysisTask.h"
+#include "Framework/runDataProcessing.h"
+#include "ReconstructionDataFormats/Track.h"
+
+#include <algorithm>
+#include <array>
+#include <cmath>
+#include <cstdlib>
+#include <memory>
+#include <string>
+#include <unordered_map>
+#include <vector>
 
 #ifndef HomogeneousField
 #define HomogeneousField

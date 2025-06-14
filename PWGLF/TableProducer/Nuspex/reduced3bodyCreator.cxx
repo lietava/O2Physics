@@ -14,39 +14,40 @@
 /// \author Yuanzhe Wang <yuanzhe.wang@cern.ch>
 /// \author Carolina Reetz <c.reetz@cern.ch>
 
-#include <cmath>
+#include "TableHelper.h"
+
+#include "PWGLF/DataModel/Reduced3BodyTables.h"
+#include "PWGLF/DataModel/pidTOFGeneric.h"
+
+#include "Common/Core/PID/PIDTOF.h"
+#include "Common/Core/RecoDecay.h"
+#include "Common/Core/trackUtilities.h"
+#include "Common/DataModel/Centrality.h"
+#include "Common/DataModel/EventSelection.h"
+#include "Common/DataModel/Multiplicity.h"
+#include "Common/DataModel/PIDResponse.h"
+#include "EventFiltering/Zorro.h"
+#include "EventFiltering/ZorroSummary.h"
+#include "Tools/KFparticle/KFUtilities.h"
+
+#include "CCDB/BasicCCDBManager.h"
+#include "DCAFitter/DCAFitterN.h"
+#include "DataFormatsParameters/GRPMagField.h"
+#include "DataFormatsParameters/GRPObject.h"
+#include "DetectorsBase/GeometryManager.h"
+#include "DetectorsBase/Propagator.h"
+#include "Framework/ASoAHelpers.h"
+#include "Framework/AnalysisDataModel.h"
+#include "Framework/AnalysisTask.h"
+#include "Framework/runDataProcessing.h"
+#include "ReconstructionDataFormats/Track.h"
+
+#include <algorithm>
 #include <array>
+#include <cmath>
 #include <cstdlib>
 #include <string>
 #include <vector>
-#include <algorithm>
-
-#include "Framework/runDataProcessing.h"
-#include "Framework/AnalysisTask.h"
-#include "Framework/AnalysisDataModel.h"
-#include "Framework/ASoAHelpers.h"
-#include "DCAFitter/DCAFitterN.h"
-#include "ReconstructionDataFormats/Track.h"
-#include "Common/Core/trackUtilities.h"
-#include "Common/DataModel/Multiplicity.h"
-#include "Common/DataModel/Centrality.h"
-#include "PWGLF/DataModel/pidTOFGeneric.h"
-#include "PWGLF/DataModel/Reduced3BodyTables.h"
-#include "Common/DataModel/EventSelection.h"
-#include "Common/DataModel/PIDResponse.h"
-#include "Common/Core/PID/PIDTOF.h"
-#include "Common/Core/RecoDecay.h"
-#include "TableHelper.h"
-#include "Tools/KFparticle/KFUtilities.h"
-
-#include "EventFiltering/Zorro.h"
-#include "EventFiltering/ZorroSummary.h"
-
-#include "DetectorsBase/Propagator.h"
-#include "DetectorsBase/GeometryManager.h"
-#include "DataFormatsParameters/GRPObject.h"
-#include "DataFormatsParameters/GRPMagField.h"
-#include "CCDB/BasicCCDBManager.h"
 
 #ifndef HomogeneousField
 #define HomogeneousField

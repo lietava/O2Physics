@@ -14,20 +14,23 @@
 /// \file dedxAnalysis.cxx
 /// \brief  Analysis to do PID
 
+#include "PWGLF/DataModel/LFStrangenessTables.h"
+
 #include "Common/Core/RecoDecay.h"
 #include "Common/Core/TrackSelection.h"
+#include "Common/Core/TrackSelectionDefaults.h"
 #include "Common/Core/trackUtilities.h"
 #include "Common/DataModel/EventSelection.h"
+#include "Common/DataModel/Multiplicity.h"
 #include "Common/DataModel/PIDResponse.h"
 #include "Common/DataModel/TrackSelectionTables.h"
-#include "Common/DataModel/Multiplicity.h"
+
 #include "Framework/ASoAHelpers.h"
 #include "Framework/AnalysisDataModel.h"
 #include "Framework/AnalysisTask.h"
 #include "Framework/runDataProcessing.h"
-#include "PWGLF/DataModel/LFStrangenessTables.h"
 #include "ReconstructionDataFormats/Track.h"
-#include "Common/Core/TrackSelectionDefaults.h"
+
 #include "TF1.h"
 
 using namespace o2;
