@@ -282,7 +282,6 @@ struct NonPromptCascadeTask {
     mRegistry.add("hMultFT0CVshNTracks", "hMultFT0CVshNTracks", HistType::kTH2F, {nTracksAxis, multAxis});
     mRegistry.add("hNTracksVsCentFT0C", "hNTracksVsCentFT0C", HistType::kTH2F, {nTracksAxis, centAxis});
 
-
     mRegistry.add("hNTracksVsCent", "hNTracksVsCent", HistType::kTH2F, {centAxis, nTracksAxis});
     mRegistry.add("hNTracksVsCentZoom", "hNTracksVsCentZoom", HistType::kTH2F, {centAxisZoom, nTracksAxis});
 
